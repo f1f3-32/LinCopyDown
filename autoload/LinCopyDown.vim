@@ -96,8 +96,8 @@ function! s:processSpaceMark(line)
             let l:right_space = l:idx
             break
         endif
-        if match(l:curchar, "\\w") > 0
-            let l:right_idx = l:idx + 1
+        if match(l:curchar, "\\W") >= 0
+            let l:right_idx = l:idx
         endif
     endfor
     return [l:right_space, l:right_idx]
